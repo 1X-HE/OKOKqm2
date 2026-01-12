@@ -1,1 +1,73 @@
-# OKOKqm2
+Data Analysis Workflow:  
+
+Project Overview
+This project investigates the spatial externalities of short-term rentals on neighborhood safety. Focusing on London, we analyze the correlation between short-term rental proliferation and borough-level crime rates to test theories of Social Disorganization and Routine Activity.
+
+1. Objectives
+
+Research Question
+To what extent does the spatial density of active Airbnb listings correlate with recorded crime rates across London’s 32 Boroughs?
+
+### Key Hypotheses
+1.  **The Density Effect:** Higher density of active Airbnb listings is significantly associated with higher crime rates due to weakened community cohesion and increased transient populations.
+2.  **The Seasonality Effect:** Crime rates in boroughs with high tourist intensity exhibit distinct seasonal peaks (specifically May-August) compared to residential areas.
+
+2. Data Collection & Preparation
+
+Sources
+Listings Data: InsideAirbnb (London Snapshot, 2024).
+Crime Statistics: Metropolitan Police Service (MPS) - Reported offenses.
+Demographics: Office for National Statistics (ONS) - Borough population data.
+
+Scope
+Timeframe: 24-month historical crime data aligned with 2024 listing snapshots.
+Geographic Focus: London’s 32 Boroughs (excluding City of London due to population anomalies).
+Data Cleaning: Removal of "ghost listings" (inactive properties) and outliers.
+
+Derive Metrics
+Airbnb Density: Calculated as active listings per 1,000 residents.
+Crime Rate: Calculated as recorded offenses per 1,000 residents.
+Normalization: All metrics are normalized by population to ensure fair comparison across boroughs of varying sizes.
+
+3. Visualisation
+
+Time Series Plots
+Display monthly crime trends over the 24-month period to identify seasonal fluctuations.
+Highlight specific peaks during summer months (May-August) and holiday seasons (December).
+
+Zone Comparisons
+Bar Charts: Compare crime rates between "High Density" (Top 25%) and "Low Density" boroughs to visualize the disparity.
+Scatter Plots: Plot Airbnb Density (X-axis) vs. Crime Rate (Y-axis) with a regression line to visualize the linear relationship.
+
+Spatial Processing
+Generate interactive heatmaps (using Folium) to visualize the spatial clustering of crime hotspots (e.g., Westminster, Camden) overlaid with Airbnb density distributions.
+
+4. Analysis
+
+Correlation and Proximity Analysis
+Test the strength of the relationship between listing density and safety metrics:
+Statistical Techniques: Pearson correlation coefficient and Spearman rank correlation.
+Key Finding: A strong positive correlation was identified (Pearson r = 0.87).
+
+Hypothesis Testing
+
+Hypothesis 1: Does density significantly impact safety?**
+Test: OLS Regression and Significance Testing.
+H0 (Null): There is no correlation between Airbnb density and crime rates.
+H1 (Alternative): There is a significant correlation between Airbnb density and crime rates.
+Outcome: The Null Hypothesis was rejected (p < 0.05), confirming a statistically significant relationship.
+
+Hypothesis 2: Do crime rates follow seasonal tourism patterns?**
+Test: Time-series decomposition and monthly average comparison.
+Outcome: Validated the "Tourist Effect" with visible spikes in theft and burglary incidents during high-tourism months.
+
+Predictive Modeling (Exploratory)
+Note: Extension subject to time availability.*
+
+Build a regression model to predict crime hotspots based on listing growth and demographic features.
+Features: Listing density, Host type (Entire home vs. Shared room), IMD (Deprivation Index), Seasonality.
+Model Types: Linear Regression or Random Forest.
+
+
+
+
